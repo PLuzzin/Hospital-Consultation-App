@@ -1,2 +1,2 @@
 # Hospital-Consultation-App
-CRUD to make bookings in a hospital - JavaScript
+Hospital Booking App - Vanilla JavaScript | HTML5 | CSS3
