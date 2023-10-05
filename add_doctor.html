@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Edgecliff Medical Centre App</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body onload="showDoctorsInfo()">
+    
+    
+    <div class="mt-3">
+        <!-- add doctor form - name, email, phone, specialisation, role -->
+        <div class="card mb-5" style="max-width: 800px;">
+            <div class="card-header">
+                <h4>Add New Doctor</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="personName" placeholder="Doctor's name">
+                            <label for="personName">Doctor's name</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="personEmail" placeholder="name@example.com">
+                            <label for="personEmail">Email address</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="personPhone" placeholder="Phone number">
+                            <label for="personPhone">Phone number</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <select class="form-select" id="personSpecialisation">
+                              <option value="Select" selected>Select specialisation</option>
+                              <option value="Cardiology">Cardiology</option>
+                              <option value="Surgery">Surgery</option>
+                              <option value="Emergency">Emergency</option>
+                              <option value="Psychiatry">Psychiatry</option>
+                            </select>
+                            <label for="personSpecialisation">Specialisation</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <select class="form-select" id="personRole">
+                              <option value="Select" selected>Select role</option>
+                              <option value="Department Manager">Department Manager</option>
+                              <option value="Senior Doctor">Senior Doctor</option>
+                              <option value="Resident">Resident</option>
+                              <option value="Other">Other</option>
+                            </select>
+                            <label for="personRole">Role</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer d-flex justify-content-end">
+                <button type="button" class="btn btn-secondary btn-sm me-3" onclick="reset('listDoctors')">Reset</button>
+                <button type="button" class="btn btn-primary btn-sm" onclick="saveDoctor()">Save</button>
+            </div>
+        </div>
+
+        <hr />
+
+        <!-- patient table -->
+        <div class="card my-5">
+            <div class="card-header">
+                <h4>Doctor's List</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Specialisation</th>
+                                <th scope="col">Role</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="showInfoTable">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!-- Modal edit - name, email, phone, specialisation, role -->
+        <div id="modal" class="modal">
+            <div class="modal-content card my-5" style="max-width: 800px;">
+                <div class="card-header d-flex justify-content-between align-items-center px-4">
+                    <h4 class="mt-2">Edit information</h4>
+                    <span class="close" onclick="closeModal()">&times;</span>
+                </div>
+                <div class="card-body p-4">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="personNameEdit" placeholder="doctr's name">
+                                <label for="personNameEdit">Doctor's name</label>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="personEmailEdit" placeholder="name@example.com">
+                                <label for="personEmailEdit">Email address</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="personPhoneEdit" placeholder="Phone number">
+                                <label for="personPhoneEdit">Phone number</label>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <select class="form-select" id="personSpecialisationEdit">
+                                  <option value="Select" selected>Select specialisation</option>
+                                  <option value="Cardiology">Cardiology</option>
+                                  <option value="Surgery">Surgery</option>
+                                  <option value="Emergency">Emergency</option>
+                                  <option value="Psychiatry">Psychiatry</option>
+                                </select>
+                                <label for="personSpecialisationEdit">Specialisation</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <select class="form-select" id="personRoleEdit">
+                                  <option value="Select" selected>Select role</option>
+                                  <option value="Department Manager">Department Manager</option>
+                                  <option value="Senior Doctor">Senior Doctor</option>
+                                  <option value="Resident">Resident</option>
+                                  <option value="Other">Other</option>
+                                </select>
+                                <label for="personRoleEdit">Role</label>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+                <div id="btnSaveEdit" class="card-footer d-flex justify-content-end px-4">
+                    
+                </div>
+            </div> 
+        </div>
+        <!-- Modal edit -->   
+            
+    </div>
+
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

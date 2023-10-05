@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Edgecliff Medical Centre App</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    
+</head>
+<body>
+
+    <div class="mt-3">
+      <h1>Search Results</h1>
+
+      <div id="demo"></div>
+
+      <div class="mt-5">
+        <div class="card mb-5">
+          <div class="card-header">
+              <h4>Doctor</h4>
+          </div>
+          <div class="card-body">
+            <div class="accordion" id="accordionDoctor">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDoctorOne" aria-expanded="false">
+                    <div class="search-results-title">
+                      <strong>Dr Paul Green</strong>
+                      <span><strong>specialisation: </strong>Cardiologist</span>
+                      <span><strong>role: </strong>Senior Doctor</span>
+                      <span><strong>phone: </strong>0435667778</span>
+                      <span><strong>email:</strong>paul@gmail.com</span>
+                    </div>
+                  </button>
+                </h2>
+                <div id="collapseDoctorOne" class="accordion-collapse collapse" data-bs-parent="#accordionDoctor">
+                  <div class="accordion-body">
+                    <h6>Booked appointments</h6>
+                    <div class="search-results-content mt-3">
+                      <span><strong>Date: </strong>14 Jun 2023</span>
+                      <span><strong>Time: </strong>4PM</span>
+                      <span><strong>Patient: </strong>Jonh Doe</span>
+                    </div>
+                    <hr />
+                    <div class="search-results-content">
+                      <span><strong>Date: </strong>14 Jun 2023</span>
+                      <span><strong>Time: </strong>2PM</span>
+                      <span><strong>Patient: </strong>Mary Lane</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDoctorTwo" aria-expanded="false">
+                    <div class="search-results-title">
+                      <strong>Dr Anne Luise</strong>
+                      <span><strong>specialisation: </strong>Emergency</span>
+                      <span><strong>role: </strong>Department Manager</span>
+                      <span><strong>phone: </strong>0445667908</span>
+                      <span><strong>email:</strong>anne@gmail.com</span>
+                    </div>
+                  </button>
+                </h2>
+                <div id="collapseDoctorTwo" class="accordion-collapse collapse" data-bs-parent="#accordionDoctor">
+                  <div class="accordion-body">
+                    <h6>Booked appointments</h6>
+                    <div class="search-results-content mt-3">
+                      <span><strong>Date: </strong>14 Jun 2023</span>
+                      <span><strong>Time: </strong>4PM</span>
+                      <span><strong>Patient: </strong>Jonh Doe</span>
+                    </div>
+                    <hr />
+                    <div class="search-results-content">
+                      <span><strong>Date: </strong>14 Jun 2023</span>
+                      <span><strong>Time: </strong>2PM</span>
+                      <span><strong>Patient: </strong>Mary Lane</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+
+      <div class="mt-5">
+        <div class="card mb-5">
+          <div class="card-header">
+              <h4>Patient</h4>
+          </div>
+          <div class="card-body">
+            <div class="accordion" id="accordionPatient">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePatientOne" aria-expanded="false">
+                    <div class="search-results-title">
+                      <strong>Rob Corby</strong>
+                      <span><strong>phone: </strong>0445667908</span>
+                      <span><strong>email: </strong>rob@gmail.com</span>
+                    </div>
+                  </button>
+                </h2>
+                <div id="collapsePatientOne" class="accordion-collapse collapse" data-bs-parent="#accordionPatient">
+                  <div class="accordion-body">
+                    <h6>Personal information</h6>
+                    <div class="search-results-content mt-3">
+                      <span><strong>Name: </strong>Rob Corby</span>
+                      <span><strong>Date of birth: </strong>17 April 1980</span>
+                      <span><strong>Genre: </strong>Male</span>
+                      <span><strong>Address: </strong>26 Green st</span>
+                      <span><strong>Phone: </strong>0445667908</span>
+                      <span><strong>Email: </strong>rob@gmail.com</span>
+                    </div>
+                    <div class="search-results-content mt-3">
+                      <span><strong>Medical history: </strong>Diabetes, high blood pressure</span>
+                    </div>
+                    <hr />
+                    <h6>Booked appointments</h6>
+                    <div class="search-results-content mt-3">
+                      <span><strong>Date: </strong>14 Jun 2023</span>
+                      <span><strong>Time: </strong>4PM</span>
+                      <span><strong>Doctor: </strong>Dr Paul</span>
+                      <span><strong>Other professional: </strong>Stuart Little</span>
+                    </div>
+                    <hr />
+                    <div class="search-results-content">
+                      <span><strong>Date: </strong>15 Jun 2023</span>
+                      <span><strong>Time: </strong>3PM</span>
+                      <span><strong>Doctor: </strong>Dr Anne</span>
+                      <span><strong>Other professional: </strong>Rose Lee</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePatientTwo" aria-expanded="false">
+                    <div class="search-results-title">
+                      <strong>Helen Smith</strong>
+                      <span><strong>phone: </strong>0445667908</span>
+                      <span><strong>email: </strong>helen@gmail.com</span>
+                    </div>
+                  </button>
+                </h2>
+                <div id="collapsePatientTwo" class="accordion-collapse collapse" data-bs-parent="#accordionPatient">
+                  <div class="accordion-body">
+                    <h6>Personal information</h6>
+                    <div class="search-results-content mt-3">
+                      <span><strong>Name: </strong>Helen Smith</span>
+                      <span><strong>Date of birth: </strong>20 November 1970</span>
+                      <span><strong>Genre: </strong>Female</span>
+                      <span><strong>Address: </strong>30 Red st</span>
+                      <span><strong>Phone: </strong>0445667908</span>
+                      <span><strong>Email: </strong>helen@gmail.com</span>
+                    </div>
+                    <div class="search-results-content mt-3">
+                      <span><strong>Medical history: </strong>Diabetes, high blood pressure</span>
+                    </div>
+                    <hr />
+                    <h6>Booked appointments</h6>
+                    <div class="search-results-content mt-3">
+                      <span><strong>Date: </strong>14 Jun 2023</span>
+                      <span><strong>Time: </strong>4PM</span>
+                      <span><strong>Doctor: </strong>Dr Paul</span>
+                      <span><strong>Other professional: </strong>Stuart Little</span>
+                    </div>
+                    <hr />
+                    <div class="search-results-content">
+                      <span><strong>Date: </strong>15 Jun 2023</span>
+                      <span><strong>Time: </strong>3PM</span>
+                      <span><strong>Doctor: </strong>Dr Anne</span>
+                      <span><strong>Other professional: </strong>Rose Lee</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
